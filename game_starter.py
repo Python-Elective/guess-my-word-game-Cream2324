@@ -94,7 +94,6 @@ def get_available_letters(letters_guessed):
 def game_loop(secret_word):
     '''
     secret_word: string, the secret word to guess.
-
     Starts up an interactive game.
 
     * At the start of the game, let the user know how many 
@@ -128,3 +127,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    function call: is_word_guessed ('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's'])
+Output:
