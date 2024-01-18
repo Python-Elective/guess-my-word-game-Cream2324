@@ -29,59 +29,61 @@ print(is_word_guessed('pineapple', []))
  
  
  
-def get_guessed_word(secret_word, letters_guessed):
-    '''
-    secret_word: string, the word the user is guessing
-    letters_guessed: list, what letters have been guessed so far
-    returns: string, comprised of letters and underscores that represents
-      what letters in secret_word have been guessed so far.
-    '''
-    output_string = ""
-    for letter in secret_word:
-        if letter in letters_guessed:
-            output_string += letter + " "
-        else:
-            output_string += "_ "
-    return output_string
+# def get_guessed_word(secret_word, letters_guessed):
+#     '''
+#     secret_word: string, the word the user is guessing
+#     letters_guessed: list, what letters have been guessed so far
+#     returns: string, comprised of letters and underscores that represents
+#       what letters in secret_word have been guessed so far.
+#     '''
+#     output_string = ""
+#     for letter in secret_word:
+#         if letter in letters_guessed:
+#             output_string += letter + " "
+#         else:
+#             output_string += "_ "
+#     return output_string
  
-print(get_guessed_word('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
-print(get_guessed_word('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
-print(get_guessed_word('pineapple', []))
+# print(get_guessed_word('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
+# print(get_guessed_word('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
+# print(get_guessed_word('pineapple', []))
  
-def get_available_letters(letters_guessed):
-    '''
-    letters_guessed: list, what letters have been guessed so far
-    returns: string, comprised of letters that represents what letters have not
-      yet been guessed.
-    '''  
-    import string
-    alphabet = list(string.ascii_lowercase)
+# def get_available_letters(letters_guessed):
+#     '''
+#     letters_guessed: list, what letters have been guessed so far
+#     returns: string, comprised of letters that represents what letters have not
+#       yet been guessed.
+#     '''  
+#     import string
+#     alphabet = list(string.ascii_lowercase)
  
-    for letter in alphabet:
-        if letter in letters_guessed:
-            alphabet.remove(letter)
+#     for letter in alphabet:
+#         if letter in letters_guessed:
+#             alphabet.remove(letter)
  
-    return ' '.join(alphabet)
+#     return ' '.join(alphabet)
    
-print(get_available_letters('apple'))
-print(get_available_letters(''))
+# print(get_available_letters('apple'))
+# print(get_available_letters(''))
 
 
-    # FILL IN YOUR CODE HERE...
+#     # FILL IN YOUR CODE HERE...
 
 
-    #option 4
-    # out put_ strin =
-    # for every letter in alpjabet
-    # if letter not in letter_guessed 
-    # letter is still availbele
-    # concatenate letter onto output
-    # otherwisw 
-    # do nothing
-    #return output_string
+#     #option 4
+#     # out put_ strin =
+#     # for every letter in alpjabet
+#     # if letter not in letter_guessed 
+#     # letter is still availbele
+#     # concatenate letter onto output
+#     # otherwisw 
+#     # do nothing
+#     #return output_string
 
-#testcase
-print( get _avilable_letter({'e', 'o', }))
-    print(get_available_letters)
+# #testcase
+# print( get _avilable_letter({'e', 'o', }))
+#     print(get_available_letters)
 
-get game loop(secret_word)
+# get game loop(secret_word)
+
+
