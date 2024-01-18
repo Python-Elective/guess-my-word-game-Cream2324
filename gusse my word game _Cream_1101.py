@@ -21,7 +21,7 @@ def is_word_guessed(secret_word, letters_guessed):
  
 ### Testcases
 print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
-print(is_word_guessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
+print(is_word_guessed('mangosteen', ['z', 'x', 'q', 'm', 'a', 'n', 'g', 'o', 's', 't', 'e', 'e', 'n']))
 print(is_word_guessed('pineapple', []))
  
  
@@ -87,3 +87,16 @@ print(is_word_guessed('pineapple', []))
 # get game loop(secret_word)
 
 
+# # 4
+# while True: #game loop
+# # while player != Dead or point >0 ........
+#     if player == detaile
+#     You diee
+#     break #game over
+
+# if point ==0
+# You Loooose
+# break # game over
+
+# if guess_word == True 
+# You WIN break # game over
