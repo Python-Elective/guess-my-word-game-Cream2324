@@ -39,7 +39,7 @@ def get_guessed_word(secret_word, letters_guessed):
         else:
             output_string += "_ "
     return output_string
- 
+# Testcases
 print(get_guessed_word('apple', ['e', 'i', 'k', 'p', 'r', 's']))
 print(get_guessed_word('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
 print(get_guessed_word ('banana', []))
@@ -60,24 +60,24 @@ def get_available_letters(letters_guessed):
             alphabet.remove(letter)
  
     return ' '.join(alphabet)
-   
+# Testcases
 print(get_available_letters('apple'))
 print(get_available_letters(''))
 
-# Problem 4
-while True: #game loop
-# while player != Dead or point >0 ........
-    if player == dead
-    You diee
-    break #game over
+# # Problem 4
+# while True: #game loop
+# # while player != Dead or point >0 ........
+#     if player == dead
+#     You diee
+#     break #game over
 
-    if point == 0:
-    print ('You Loooose')
-    break # game over
+#     if point == 0:
+#     print ('You Loooose')
+#     break # game over
 
-    if guess_word == True 
-    Print ('You WIN') 
-    break # game over
+#     if guess_word == True 
+#     Print ('You WIN') 
+#     break # game over
 
-def main():
-secret_word = choose_word(word_list)
+# def main():
+# secret_word = choose_word(word_list)
