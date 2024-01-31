@@ -64,20 +64,58 @@ def get_available_letters(letters_guessed):
 print(get_available_letters('apple'))
 print(get_available_letters(''))
 
-# # Problem 4
-# while True: #game loop
-# # while player != Dead or point >0 ........
-#     if player == dead
-#     You diee
-#     break #game over
+# Problem 4
+import random
+import string
 
-#     if point == 0:
-#     print ('You Loooose')
-#     break # game over
+def choose_word(word_list):
+    return random.choice(word_list)
 
-#     if guess_word == True 
-#     Print ('You WIN') 
-#     break # game over
+def get_available_letters(letters_guessed):
+    return ''.join(letter for letter in string.ascii_lowercase if letter not in letters_guessed)
 
-# def main():
-# secret_word = choose_word(word_list)
+def get_guessed_word(secret_word, letters_guessed):
+    return ''.join(letter if letter in letters_guessed else '_' for letter in secret_word)
+
+def is_word_guessed(secret_word, letters_guessed):
+    return all(letter in letters_guessed for letter in secret_word)
+
+def game_loop(secret_word):
+    letters_guessed = []
+    mistake_made = 0
+
+    print("Let the game begin!")
+    print(f"Here a word with {len(secret_word)} letters.")
+
+    while True:
+        print(f"You have {8 - mistake_made} guesses remaining")
+        print(f"Letters available to you: {get_available_letters(letters_guessed)}")
+        
+        guess = input("Guess a letter: ")
+
+        if guess in letters_guessed:
+            print(f"You fool! You tried this already: {get_guessed_word(secret_word, letters_guessed)}")
+        elif guess in secret_word:
+            letters_guessed.append(guess)
+            print(f"Correct! {get_guessed_word(secret_word, letters_guessed)}")
+        else:
+            print(f"Incorrect, this letter is not in my word: {get_guessed_word(secret_word, letters_guessed)}")
+            mistake_made += 1
+        
+        print()
+
+        if is_word_guessed(secret_word, letters_guessed):
+            print("You WIN!")
+            break
+
+        if mistake_made == 8:
+            print(f"GAME OVER! Here is the word: {secret_word}")
+            break  # game stops
+
+def main():
+    word_list = ["apple", "banana", "cherry"]  # Add more words as needed
+    secret_word = choose_word(word_list)
+    game_loop(secret_word)
+
+if __name__ == "__main__":
+    main()
