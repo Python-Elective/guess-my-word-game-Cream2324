@@ -127,6 +127,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    function call: is_word_guessed ('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's'])
-Output:
