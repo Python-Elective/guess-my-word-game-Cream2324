@@ -109,57 +109,88 @@ print(get_available_letters('apple'))
 print(get_available_letters(''))
 
 # Problem 4
-import random
-import string
-
-def choose_word(word_list):
-    return random.choice(word_list)
-
-def get_available_letters(letters_guessed):
-    return ''.join(letter for letter in string.ascii_lowercase if letter not in letters_guessed)
-
-def get_guessed_word(secret_word, letters_guessed):
-    return ''.join(letter if letter in letters_guessed else '_' for letter in secret_word)
-
-def is_word_guessed(secret_word, letters_guessed):
-    return all(letter in letters_guessed for letter in secret_word)
 
 def game_loop(secret_word):
+
+    '''
+
+    secret_word: string, the secret word to guess.
+
+    Starts up an interactive game.
+
+    * At the start of the game, let the user know how many
+
+      letters the secret_word contains.
+
+    * Ask the user to supply one guess (i.e. letter) per round.
+
+    * The user should receive feedback immediately after each guess
+
+      about whether their guess appears in the computers word.
+
+    * After each round, you should also display to the user the
+
+      partially guessed word so far, as well as letters that the
+
+      user has not yet guessed.
+
+    Follows the other limitations detailed in the problem write-up.
+
+    '''
     letters_guessed = []
-    mistake_made = 0
+
+    mistakes_made = 0
 
     print("Let the game begin!")
-    print(f"Here a word with {len(secret_word)} letters.")
+
+    print(f"I am thinking of a word with {len(secret_word)} letter")
 
     while True:
-        print(f"You have {8 - mistake_made} guesses remaining")
+
+        print(f"You have {8-mistakes_made} guess remaining.")
+
         print(f"Letters available to you: {get_available_letters(letters_guessed)}")
-        
-        guess = input("Guess a letter: ")
+
+        guess = input("Guessed a letter:")
 
         if guess in letters_guessed:
-            print(f"You fool! You tried this already: {get_guessed_word(secret_word, letters_guessed)}")
+
+          print(f"You fool! You tried this letter already")
+
         elif guess in secret_word:
-            letters_guessed.append(guess)
-            print(f"Correct! {get_guessed_word(secret_word, letters_guessed)}")
+
+          letters_guessed.append(guess)
+
+          print(f"Correct: {get_guessed_word(secret_word,letters_guessed)}")
+
         else:
-            print(f"Incorrect, this letter is not in my word: {get_guessed_word(secret_word, letters_guessed)}")
-            mistake_made += 1
-        
-        print()
+
+          print(f"Incorrect, this letter is not in my word: {get_guessed_word(secret_word, letters_guessed)}")
+
+          letters_guessed.append(guess)
+
+          mistakes_made += 1
 
         if is_word_guessed(secret_word, letters_guessed):
-            print("You WIN!")
-            break
 
-        if mistake_made == 8:
-            print(f"GAME OVER! Here is the word: {secret_word}")
-            break  # game stops
+           print("You Win")
 
+           break
+
+        if mistakes_made == 8:
+
+           print(f"Gameover, the word was {secret_word}")
+
+           break
+
+# Testcases
 def main():
-    # word_list = ["apple", "banana", "cherry"]  # Add more words as needed
+
     secret_word = choose_word(word_list)
-    game_loop(secret_word)
+
+    game_loop('airplane')
+
 
 if __name__ == "__main__":
+
     main()
