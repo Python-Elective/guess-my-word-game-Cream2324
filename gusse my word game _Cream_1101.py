@@ -148,31 +148,20 @@ def game_loop(secret_word):
     while True:
 
         print(f"You have {8-mistakes_made} guess remaining.")
-
         print(f"Letters available to you: {get_available_letters(letters_guessed)}")
-
         guess = input("Guessed a letter:")
 
         if guess in letters_guessed:
-
           print(f"You fool! You tried this letter already")
-
         elif guess in secret_word:
-
           letters_guessed.append(guess)
-
           print(f"Correct: {get_guessed_word(secret_word,letters_guessed)}")
-
         else:
-
           print(f"Incorrect, this letter is not in my word: {get_guessed_word(secret_word, letters_guessed)}")
-
           letters_guessed.append(guess)
-
           mistakes_made += 1
 
         if is_word_guessed(secret_word, letters_guessed):
-
            print("You Win")
 
            break
@@ -184,11 +173,15 @@ def game_loop(secret_word):
            break
 
 # Testcases
+        
 def main():
 
     secret_word = choose_word(word_list)
 
-    game_loop('airplane')
+    # game_loop('airplane')
+    
+    game_loop(secret_word)
+ 
 
 
 if __name__ == "__main__":
